@@ -68,7 +68,7 @@ const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link menubar-items" href="#">
+              <a className="nav-link menubar-items" href="">
                 <img
                   src="/images/menubar/bag-2-svgrepo-com.svg"
                   className="icooons"

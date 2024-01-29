@@ -5,8 +5,11 @@ const CategoryCard = () => {
     <div className='cards-top'>
         
         <div className='Cimg-top'>
-        <p className='banner-text'>Mobiles</p>
-        <img src='/images/LandingPg/categry1.svg' alt='' className='banner-insideImge'/>
+        <div className="banner-text">
+       
+       <p className="text-edit">Mobiles</p>
+     </div>
+        <img src='/images/LandingPg/flash.png' alt='' className='banner-insideImge'/>
         </div>
     </div>
   )
