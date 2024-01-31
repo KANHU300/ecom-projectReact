@@ -5,8 +5,8 @@ const ShpMoreCard = () => {
     
         <div className="ShopMore-cards">
          
-        <div className="row">
-          <div className="col-lg-6 mb-2">
+        <div className="row g-3">
+          <div className="col-lg-6 ">
           <div className="shopMore-top">
             <img
               src="/images/LandingPg/newBnr.png"
@@ -16,7 +16,7 @@ const ShpMoreCard = () => {
             
           </div>
           </div>
-          <div className="col-lg-6 mb-2">
+          <div className="col-lg-6 ">
           <div className="shopMore-top">
             <img
               src="/images/LandingPg/newBnr.png"
@@ -27,7 +27,7 @@ const ShpMoreCard = () => {
           </div>
           </div>
 
-          <div className="col-lg-6 mb-2">
+          <div className="col-lg-6 ">
           <div className="shopMore-top">
             <img
               src="/images/LandingPg/newBnr.png"
@@ -37,7 +37,7 @@ const ShpMoreCard = () => {
             
           </div>
           </div>
-          <div className="col-lg-6 mb-2">
+          <div className="col-lg-6 ">
           <div className="shopMore-top">
             <img
               src="/images/LandingPg/newBnr.png"

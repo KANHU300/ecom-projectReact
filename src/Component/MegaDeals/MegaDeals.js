@@ -1,103 +1,63 @@
-import React from "react";
+
+
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const MegaDeals = () => {
+  const [getItems, setItems] = useState([]);
+  const APi_URL = "http://192.168.0.60:4000/";
+  useEffect(() => {
+    const getAllCartProduct = async () => {
+      try {
+        const response = await axios.get(
+          `${APi_URL}admin/products/BestProducts`
+        );
+        console.log(response);
+        setItems(response.data.bestSellingProducts);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getAllCartProduct();
+  }, []);
   return (
     // <div className="row mb-4">
     //   <div className="col-md-6">
     <div className="MegaDeals-cards">
-      <div className="row ">
-        <div className="col-lg-6 mb-2">
-          <div className="card MegaDeals-top ">
-            <span className="card-topLeft-text">Mobile & acessories</span>
-            <div className="row g-0">
-              <div className="col-5">
-                <img
-                  src="/images/LandingPg/Laptop.png"
-                  className="img-fluid rounded-start deals-image"
-                  alt="..."
-                />
-              </div>
-              <div className="col-7">
-                <div className="card-body card-right">
-                  <h5 className="card-title">
-                    Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina
-                   
-                  </h5>
-                  <p className="card-text-price">AED 200</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-6 mb-2">
-          <div className="card MegaDeals-top ">
-            <span className="card-topLeft-text">Mobile & acessories</span>
-            <div className="row g-0">
-              <div className="col-5">
-                <img
-                  src="/images/LandingPg/Laptop.png"
-                  className="img-fluid rounded-start deals-image"
-                  alt="..."
-                />
-              </div>
-              <div className="col-7">
-                <div className="card-body card-right">
-                  <h5 className="card-title">
-                    Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina
-           
-                  </h5>
-                  <p className="card-text-price">AED 200</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-6 mb-2">
-          <div className="card MegaDeals-top ">
-            <span className="card-topLeft-text">Mobile & acessories</span>
-            <div className="row g-0">
-              <div className="col-5">
-                <img
-                  src="/images/LandingPg/Laptop.png"
-                  className="img-fluid rounded-start deals-image"
-                  alt="..."
-                />
-              </div>
-              <div className="col-7">
-                <div className="card-body card-right">
-                  <h5 className="card-title">
-                    Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina
-                   
-                  </h5>
-                  <p className="card-text-price">AED 200</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-6 mb-2">
-          <div className="card MegaDeals-top ">
-            <span className="card-topLeft-text">Mobile & acessories</span>
-            <div className="row g-0">
-              <div className="col-5">
-                <img
-                  src="/images/LandingPg/Laptop.png"
-                  className="img-fluid rounded-start deals-image"
-                  alt="..."
-                />
-              </div>
-              <div className="col-7">
-                <div className="card-body card-right">
-                  <h5 className="card-title">
-                    Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina
+      <div className="row g-3">
+        {
+          getItems.map((products) =>(
+            <div className="col-lg-6 ">
+            <div className="card MegaDeals-top ">
+              <span className="card-topLeft-text">{products.categoryName}</span>
+              <div className="row g-0">
+                <div className="col-5">
+                  <div className="deals-topimage"> <img
+                    src={products.thumbnail}
+                    className="img-fluid rounded-start deals-image"
+                    alt="..."
+                  /></div>
+                
                  
-                  </h5>
-                  <p className="card-text-price">AED 200</p>
+                </div>
+                <div className="col-7">
+                  <div className="card-body card-right">
+                    <h5 className="card-title">
+                     {products.title}
+                     
+                    </h5>
+                    <p className="card-text-price">AED <span>{products.sellingPrice}</span></p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+
+          )) 
+        }
+        
+       
+      
       </div>
 
       {/* <div className="card MegaDeals-top ">

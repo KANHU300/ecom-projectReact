@@ -8,7 +8,10 @@ import Slider from "../../Component/Slider/Slider";
 import Productslidr from "../../Component/Productslidr/Productslidr";
 import ShpMoreCard from "../../Component/ShopMore/ShpMoreCard";
 import MegaDeals from "../../Component/MegaDeals/MegaDeals";
-import MobileBanner from "../../Component/ElectricBanner/MobileBanner";
+import MobileBanner from "../../Component/Banners/MobileBanner";
+import BiggerBanner from "../../Component/Banners/BiggerBanner";
+import MdBanerTop from "../../Component/Banners/MDBanerTop";
+import ProductView from "../../Component/ProductView/ProductView";
 
 const Landing = () => {
   return (
@@ -18,27 +21,10 @@ const Landing = () => {
       <div className="categoris-section">
         <div className="container">
           <TextTitle text="Categories" className=" " />
-          <ul className="list-unstyled category-itemTop">
-            <li>
+         
               <CategoryCard />
-            </li>
-            <li>
-              <CategoryCard />
-            </li>
-            <li>
-              <CategoryCard />
-            </li>
-            <li>
-              <CategoryCard />
-            </li>
-            <li>
-              <CategoryCard />
-            </li>
-            <li>
-              <CategoryCard />
-            </li>
-          </ul>
-          <div className="row mb-4">
+           
+          <div className="row mb-4 g-3">
             <div className="col-md-6">
              
               <ShpMoreCard />
@@ -77,51 +63,55 @@ const Landing = () => {
             </SwiperSlide>
           </Swiper>
         </div> */}
-        <TextTitle text="Best selling mobiles" className="textSub-title" />
-        <div className="row">
-          <div className="col-md-3 col-6">
+        <TextTitle text="Best selling " className="textSub-title" />
+        <CartItem />
+        {/* <div className="row g-3">
+          <div className="col-md-3 col-6  pe-0">
             <CartItem />
           </div>
-          <div className="col-md-3 col-6">
+          <div className="col-md-3 col-6  pe-0">
             <CartItem />
           </div>
-          <div className="col-md-3 col-6">
+          <div className="col-md-3 col-6  pe-0">
             <CartItem />
           </div>
-          <div className="col-md-3 col-6">
+          <div className="col-md-3 col-6  pe-0">
             <CartItem />
           </div>
-        </div>
+        </div> */}
         <TextTitle text="Mobile & Acesssories" className="textSub-title" />
 
-        <div className="row mb-4 ">
-          <div className="col-md-5">
-            <MobileBanner />
+        <div className="row mb-4 g-3">
+          <div className="col-md-5 ">
+           <BiggerBanner/>
           </div>
-          <div className="col-md-7">
-            <div className="row mb-4">
-              <div className="col-md-4  mb-2">
+          <div className="col-md-7 ">
+            <div className="row mb-4 g-3">
+              <div className="col-md-4 col-6  ">
                 <MobileBanner />
               </div>
-              <div className="col-md-4  mb-2">
+              <div className="col-md-4 col-6  ">
                 <MobileBanner />
               </div>
-              <div className="col-md-4  mb-2">
+              <div className="col-md-4 col-6   ">
                 <MobileBanner />
               </div>
-              <div className="col-md-4  mb-2">
+              <div className="col-md-4 col-6  ">
                 <MobileBanner />
               </div>
-              <div className="col-md-4  mb-2">
+              <div className="col-md-4 col-6   ">
                 <MobileBanner />
               </div>
-              <div className="col-md-4  mb-2">
+              <div className="col-md-4 col-6   ">
                 <MobileBanner />
               </div>
             </div>
           </div>
         </div>
+        <MdBanerTop/>
+        <ProductView/>
       </div>
+      
     </div>
   );
 };

@@ -105,7 +105,7 @@ const Header = () => {
                   alt=""
                 />
               </form>
-              <div className="bottom-nav d-lg-none">
+              {/* <div className="bottom-nav d-lg-none">
                 <ul className="categories-top list-unstyled">
                   <li className="product-categoriesLIst Menu-top">Menu</li>
                   <li className="product-categoriesLIst">
@@ -129,7 +129,7 @@ const Header = () => {
 
                   <li className="product-categoriesLIst">Headphones</li>
                 </ul>
-              </div>
+              </div> */}
             </div>
 
             <ul className="navbar-nav  d-none d-lg-flex ">
@@ -200,7 +200,7 @@ const Header = () => {
             </ul>
           </div>
         </nav>
-        <div className="bottom-nav d-none d-lg-block">
+        {/* <div className="bottom-nav d-none d-lg-block">
           <ul className="categories-top list-unstyled">
           {getCategory.map(product => (
             <li className="nav-item dropdown edit-NVItems">
@@ -242,7 +242,7 @@ const Header = () => {
             </li>
               ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );

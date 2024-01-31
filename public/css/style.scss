@@ -68,11 +68,11 @@ body {
 
 /*for fixed header*/
 .header {
-  min-height: 70px;
+  min-height: 60px;
   background-color: white;
   // padding: 0px 40px;
   .nvbar-edit {
-    min-height: 55px;
+    min-height: 60px;
     background-color: white;
     padding: 0px 40px;
     .logo-edit {
@@ -452,76 +452,139 @@ body {
   .categoris-section {
     width: 100%;
     height: auto;
-    .category-itemTop {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
   }
 }
 // ////category card component///
+.category-itemTop {
+  padding: 0px 50px 30px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include lg {
+  }
+  @include xsm {
+    padding: 0px;
+    display: flex;
+    gap: 11px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cards-top {
+    .Cimg-top {
+      height: 200px;
+      width: 185px;
+      position: relative;
+      @include lg {
+      }
+      @include xsm {
+        height: 162px;
+        width: 141px;
+      }
 
-.cards-top {
-  .Cimg-top {
-    height: 220px;
-    width: 200px;
-    position: relative;
+      .banner-insideImge {
+        width: 100%;
+        height: 100%;
+      }
+      .banner-text {
+        position: absolute;
 
-    .banner-insideImge {
-      width: 100%;
-      height: 100%;
-    }
-    .banner-text {
-      position: absolute;
-      top: 10px;
-      z-index: 99999;
-      width: 100%;
+        z-index: 99999;
+        width: 100%;
 
-      
-      top: 19%;
-      color: red;
-      margin-bottom: 0px;
-      .text-edit{
-        text-align: center;
-        font-family: Poppins-Medium;
-        font-size: 16px;
-        color: #000000;
+        top: 14%;
+
+        margin-bottom: 0px;
+        .text-edit {
+          padding: 0px 10px;
+          text-align: center;
+          font-family: Poppins-Medium;
+          font-size: 16px;
+          color: #000000;
+        }
       }
     }
   }
 }
-// .MobileBanners-top{
-//   width: 100%;
-//   height: auto;
-  .Cimg-top {
-    height: auto;
+
+.MobileBanners-top {
+  height: auto;
+  width: 100%;
+  position: relative;
+  .bannerImgg-top {
+    height: 230px;
     width: 100%;
-    position: relative;
+    @include md {
+      height: 152px;
+    }
+    @include xsm {
+      height: 150px;
+    }
     .banner-insideImge {
       width: 100%;
       height: 100%;
-    }
-    .banner-text {
-      position: absolute;
-      top: 10px;
-      z-index: 99999;
-      width: 100%;
-
-      
-      top: 19%;
-    
-      margin-bottom: 0px;
-      .text-edit{
-        text-align: center;
-        font-family: Poppins-Medium;
-        font-size: 16px;
-        color: #000000;
-      }
+      border-radius: 4px;
     }
   }
 
-// }
+  .banner-text {
+    position: absolute;
+
+    z-index: 99999;
+    width: 100%;
+
+    top: 9%;
+
+    margin-bottom: 0px;
+    .text-edit {
+      margin-bottom: 0px;
+      text-align: center;
+      font-family: Poppins-Medium;
+      font-size: 22px;
+      color: #000000;
+      @include md {
+        font-size: 18px;
+      }
+    }
+  }
+}
+.big-banner {
+  height: auto;
+  width: 100%;
+  position: relative;
+  .bannerImgg-top {
+    height: 477px;
+    @include md {
+      height: 320px;
+    }
+    @include xsm {
+      height: 200px;
+    }
+    .banner-insideImge {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+  }
+  .banner-text {
+    position: absolute;
+
+    z-index: 99999;
+    width: 100%;
+
+    top: 9%;
+
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-family: Poppins-Medium;
+    font-size: 22px;
+    color: #000000;
+    @include md {
+      font-size: 18px;
+    }
+  }
+}
 
 ////////////////////////////////
 /// text components section start
@@ -613,6 +676,7 @@ body {
     cursor: pointer;
   }
 }
+
 // /////////////////
 // shop more card css
 // //////////////////////
@@ -624,20 +688,23 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 15px;
-  @include xsm{
+  @include xsm {
     justify-content: center;
   }
 
   .shopMore-top {
-   
-    width:100%;
+    width: 100%;
     height: 135px;
-   
+    @include xsm {
+      width: 250px;
+      height: 124px;
+      margin: auto;
+    }
+
     .CardBanner-insideImge {
       width: 100%;
       height: 100%;
     }
-    
   }
 }
 .MegaDeals-cards {
@@ -653,7 +720,13 @@ body {
     position: relative;
     width: 100%;
     height: 135px;
-    
+    @include xsm {
+      position: relative;
+      width: 250px;
+      height: 124px;
+      margin: auto;
+    }
+
     .card-topLeft-text {
       background-color: #508fa7;
       color: #000000;
@@ -662,13 +735,20 @@ body {
       margin-bottom: 0px;
       border-top-left-radius: 3px;
       padding: 2px 4px;
-      width: 120px;
+      width: 137px;
     }
-    .deals-image{
-      padding: 8px 4px;
-      width: 100%;
-      height: auto;
+    .deals-topimage {
+      width: 90%;
+      height: 103px;
+      padding-top: 10px;
+      margin: auto;
+
+      .deals-image {
+        width: 100%;
+        height: 100%;
+      }
     }
+
     .card-right {
       padding: 8px 4px;
       .card-title {
@@ -676,7 +756,15 @@ body {
         font-size: 12px;
         font-family: Sf-R;
         margin-bottom: 0px;
-        height: 75px;
+        height: 72px;
+        overflow: clip;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        @include xsm {
+          height: 60px;
+        }
       }
       .card-text-price {
         font-size: 14px;
@@ -791,13 +879,32 @@ body {
     font-size: 12px; /* Change to your desired font size */
   }
 }
+.Mdeal-BnrTop {
+  .mdeal-image {
+    width: 100%;
+    height: auto;
+  }
+}
+.Mdeal-BnrBtm {
+  .mdeal-bottomImage {
+    width: 100%;
+    height: auto;
+  }
+}
 
 // ///////////////////////
 // product component css
 /////////////////////////
 .product-card {
   width: 100%;
-  height: auto;
+  height: 360px;
+  padding-bottom: 2px;
+  @include md {
+    height: 266px;
+  }
+  @include xsm {
+    height: 266px;
+  }
   .card-top {
     background: #efefef;
     width: 100%;
@@ -811,7 +918,10 @@ body {
     .productImg-top {
       width: auto;
       height: 160px;
-      @include md{
+      @include md {
+        height: 95px;
+      }
+      @include xsm {
         height: 95px;
       }
 
@@ -835,24 +945,35 @@ body {
       font-size: 12px;
       font-family: Sf-R;
       margin-bottom: 0px;
-      @include md{
+      height: 52px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Number of lines to show */
+      -webkit-box-orient: vertical;
+
+      @include md {
         font-size: 11px;
-       }
+      }
+      @include xsm {
+        height: 49px;
+        font-size: 11px;
+      }
     }
     .item-review {
       .starss {
         font-size: 22px;
-        @include md{
-         font-size: 18px;
+        @include md {
+          font-size: 18px;
         }
       }
       .custemer-rivew {
         font-family: Sf-R;
         color: #508fa7;
         font-size: 13px;
-        @include md{
+        @include md {
           font-size: 11px;
-         }
+        }
       }
     }
     .item-price {
@@ -860,9 +981,12 @@ body {
       font-size: 18px;
       font-family: Sf-M;
       margin-bottom: 7px;
-      @include md{
+      @include md {
         font-size: 11px;
-       }
+      }
+      @include xsm {
+        font-size: 12px;
+      }
     }
     .add-cart {
       display: flex;
@@ -874,17 +998,500 @@ body {
       font-size: 12px;
       height: 40px;
       font-family: Sf-R;
-      @include md{
+      @include md {
         font-size: 11px;
         height: 30px;
-       }
+      }
+      @include xsm {
+        font-size: 11px;
+        height: 30px;
+      }
       .bag-icon {
         height: 16px;
         width: auto;
         margin-right: 5px;
-        @include md{
+        @include md {
           height: 14px;
-         }
+        }
+        @include xsm {
+          height: 14px;
+        }
+      }
+    }
+  }
+}
+.about-item{
+  margin-top: 30px;
+  .about-item-image{
+    height: 300px;
+    width: 100%;
+      .top-image-item{
+        width: 100%;
+    height: 100%;
+    border-radius: 10px;
+          
+      }
+  }
+  .about-ietm-carosual{
+    padding-top: 30px;
+  
+    .imageSlide-top{
+      height: 100px;
+      width: 100%;
+      
+      .imagesBottm{
+        width: 100%;
+      height: 100%;
+
+      }
+
+    }
+    .swiper-button-next, .swiper-button-prev {
+      font-family: 'YourFont', sans-serif; /* Change 'YourFont' to the desired font family */
+      font-size: 16px; /* Change the font size as needed */
+      color: #000; /* Change the font color as needed */
+      &::after{
+        font-size: 18px;
+      }
+    }
+    
+  }
+  .about-details{
+    padding: 0px 30px;
+      .item-para{
+       
+          font-size: 21px;
+          color: #272727;
+          font-family:"SF-M";
+          @include xsm{
+              
+              font-size: 16px;
+          }
+          @include sm{
+             
+              font-size: 16px;
+          }
+          @include md{
+             
+              font-size: 18px;
+            }
+            @include lg{
+            
+              font-size: 21px;
+            }
+      }
+      .cost-details{
+          display: flex;
+          align-items: center;
+          .cost-offer{
+              color: #D10808;
+              font-size: 21px;
+              font-family:"SF-Pro-Display-Medium";
+              @include xsm{
+              
+                font-size: 16px;
+            }
+            @include sm{
+               
+                font-size: 16px;
+            }
+            @include md{
+               
+                font-size: 18px;
+              }
+              @include lg{
+              
+                font-size: 21px;
+              }
+              .cost-confrim{
+                color: #508FA7 !important;
+                padding-left: 20px;
+
+              }
+          }
+         
+      }
+      .inclusiveline{
+          color: #272727;
+          font-size: 18px;
+          font-family: "SF-Pro-Display-Regular";
+          @include xsm{
+              font-size: 15px;
+          }
+          @include sm{
+              font-size: 16px;
+          }
+          @include md{
+              font-size: 16px;
+          }
+          @include lg{
+              font-size: 16px;
+          }
+      }
+      .quantity-details{
+          padding-bottom:20px;
+          .quantity-para{
+              color: #272727;
+              font-size: 18px;
+              font-family: "SF-Pro-Display-Regular";
+              @include xsm{
+                  font-size: 15px;
+              }
+              @include sm{
+                  font-size: 16px;
+              }
+              @include md{
+                  font-size: 16px;
+              }
+              @include lg{
+                  font-size: 16px;
+              }
+          }
+          .quantity-increase{
+              width: 100px;
+              border: 2px solid #606060;
+              padding: 5px;
+              align-items: center;
+              display: flex;
+              .quantity-plus{
+                  color: #606060;
+              }
+          }
+      }
+      .add-to-cart-buttons{
+          padding-bottom: 20px;
+          @include xsm{
+              display: flex;
+              justify-content: space-between;
+          }
+          @include sm{
+              display: flex;
+              justify-content: space-between;
+          }
+          @include md{
+              display: flex;
+              justify-content: space-between;
+          }
+          @include lg{
+              display: flex;
+              justify-content: space-between;
+          }
+          .addcartbutton{
+              width: 300px;
+              height: 45px;
+              color: #000000;
+              font-size: 18px;
+              border: 2px solid #000000;
+              border-radius: 30px;
+              background: #FFFFFF;
+              font-family:"SF-Pro-Display-Medium";
+              @include xsm{
+                  width: 100%;
+                  font-size: 15px;
+                  height: 35px;
+              }
+              @include sm{
+                  width: 100%;
+                  font-size: 18px;
+                  height: 35px;
+              }
+              @include lg{
+                  width: 100%;
+                  font-size: 18px;
+              }
+          }
+          .buyitnowbutton{
+              width: 300px;
+              height: 45px;
+              color: #FFFFFF;
+              font-size: 18px;
+              border-radius: 5px;
+              background: #02ADC7;
+              font-family:"SF-Pro-Display-Medium";
+              margin-left: 20px;
+              @include xsm{
+                  width: 100%;
+                  font-size: 15px;
+                  height: 35px;
+              }
+              @include sm{
+                  width: 100%;
+                  font-size: 16px;
+                  height: 35px;
+              }
+              @include lg{
+                  width: 100%;
+                  font-size: 18px;
+              }
+          }
+      }
+      .globalpointline{
+          .globalpurchase{
+              color: #272727;
+              font-size: 18px;
+              font-family: "SF-Pro-Display-Regular"; 
+              @include xsm{
+                  font-size: 15px;
+              } 
+              @include sm{
+                  font-size: 16px;
+              }
+              @include md{
+                  font-size: 16px;
+              }
+              @include lg{
+                  font-size: 16px;
+              }
+          }
+      }
+      .rating-stars{
+          .write-review{
+              color: #508FA7;
+              font-size: 24px;
+              font-family:"SF-Pro-Display-Medium";
+              @include xsm{
+                  font-size: 20px;
+              }
+              @include sm{
+                  font-size: 22px;
+              }
+              @include md{
+                  font-size: 22px;
+              }
+              @include lg{
+                  font-size: 26px;
+              }
+          }
+      }
+      .costumer-review{
+          font-size: 28px;
+          color: #272727;
+          font-family:"SF-Pro-Display-Medium";
+          @include xsm{
+              font-size: 20px;
+          }
+          @include sm{
+              font-size: 24px;
+          }
+          @include md{
+              font-size: 25px;
+          }
+          @include lg{
+              font-size: 26px;
+          }
+      }
+  }
+}
+
+// /////////////////////////
+// footer component css
+// ======================///
+.global-aims-footer {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding-top: 20px;
+  .globalaim {
+    margin-top: 60px;
+
+    @include xsm {
+      margin-top: 10px;
+      padding-left: 10px;
+    }
+    .globalaimpara {
+      color: #272727;
+      font-size: 15px;
+      font-family: Sf-R;
+      @include xsm {
+        font-size: 13px;
+      }
+      @include sm {
+        font-size: 12px;
+      }
+      @include md {
+        font-size: 11px;
+      }
+    }
+    .supportemail {
+      display: flex;
+      align-items: center;
+      .supportemailicon {
+        color: #508fa7;
+      }
+      .gm-email {
+        color: #272727;
+        font-size: 13px;
+        font-family: Sf-R;
+        padding-top: 14px;
+        padding-left: 10px;
+        @include xsm {
+          font-size: 9px;
+          padding-top: 14px;
+        }
+        @include sm {
+          font-size: 11px;
+        }
+        @include md {
+          font-size: 10px;
+        }
+        .gm-number {
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+  .categories {
+    padding-left: 20px;
+    @include sm {
+      padding-left: 20px;
+    }
+    @include md {
+      padding-left: 40px;
+    }
+    .categoriesheader {
+      color: #000000;
+      font-size: 22px;
+      font-family: Sf-M;
+      @include xsm {
+        font-size: 12px;
+        padding-top: 15px;
+      }
+      @include sm {
+        font-size: 15px;
+      }
+      @include md {
+        font-size: 15px;
+      }
+    }
+    .categoriesitems {
+      padding-top: 5px;
+      @include xsm {
+        padding-top: 0px;
+      }
+      @include sm {
+        padding-top: 0px;
+      }
+      @include md {
+        padding-top: 0px;
+      }
+      .categoriesmaterials {
+        color: #272727;
+        font-size: 15px;
+        font-family: Sf-R;
+        text-decoration: none;
+        @include xsm {
+          font-size: 12px;
+        }
+        @include sm {
+          font-size: 12px;
+        }
+        @include md {
+          font-size: 12px;
+        }
+      }
+    }
+    .categoriesicons {
+      margin-top: 20px;
+      .categoriesmaterialsicons {
+        color: #02adc7;
+        width: 30px;
+        height: 30px;
+        border: 2px solid #02adc7;
+        border-radius: 8px;
+        padding: 6px;
+        @include xsm {
+          width: 22px;
+          height: 22px;
+          padding: 2px;
+          border-radius: 2px;
+        }
+        @include md {
+          width: 22px;
+          height: 22px;
+          padding: 2px;
+          border-radius: 3px;
+        }
+      }
+    }
+    .categoriesimage {
+      .categorieimg {
+        align-items: center;
+        display: flex;
+        padding-top: 20px;
+        .categoriespenicon {
+          color: #02adc7;
+          width: 30px;
+          height: 30px;
+          border: 2px solid #02adc7;
+          border-radius: 8px;
+          padding: 6px;
+          @include xsm {
+            width: 22px;
+            height: 22px;
+            padding: 4px;
+            border-radius: 2px;
+          }
+          @include md {
+            width: 22px;
+            height: 22px;
+            padding: 2px;
+            border-radius: 3px;
+          }
+        }
+        .categories-google-review {
+          color: #02adc7;
+          font-size: 15px;
+          font-family: Sf-R;
+          padding-left: 10px;
+          @include xsm {
+            font-size: 13px;
+          }
+          @include md {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .visa {
+      margin-top: 120px;
+      @include xsm {
+        margin-top: 50px;
+      }
+      @include sm {
+        margin-top: 40px;
+      }
+      @include md {
+        margin-top: 80px;
+      }
+      .visa-image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        @include xsm {
+          width: 25px;
+          height: 30px;
+        }
+        @include md {
+          width: 37px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .footeraim {
+    .footerglobal {
+      color: #272727;
+      font-size: 13px;
+      font-family: Sf-R;
+      padding-top: 14px;
+      padding-left: 10px;
+      text-align: center;
+      @include xsm {
+        font-size: 10px;
+      }
+      @include sm {
+        font-size: 12px;
       }
     }
   }
