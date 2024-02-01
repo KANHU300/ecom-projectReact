@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Text2Title from "../Title/Text2Title";
 
 const MegaDeals = () => {
   const [getItems, setItems] = useState([]);
-  const APi_URL = "http://192.168.0.60:4000/";
+  const APi_URL = "http://192.168.29.47:4000/";
   useEffect(() => {
     const getAllCartProduct = async () => {
       try {
@@ -24,6 +25,7 @@ const MegaDeals = () => {
     // <div className="row mb-4">
     //   <div className="col-md-6">
     <div className="MegaDeals-cards">
+      <Text2Title text="Mega Deals" />
       <div className="row g-3">
         {
           getItems.map((products) =>(

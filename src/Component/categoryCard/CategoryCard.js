@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const CategoryCard = () => {
   const [getCategory, setCategory] = useState([]);
-  const APi_URL = "http://192.168.0.60:4000/";
+  const [getId, setId] = useState([]);
+  const APi_URL = "http://192.168.29.47:4000/";
+  const navigate = useNavigate();
   useEffect(() => {
     const getAllCategory = async () => {
       try {
@@ -18,11 +21,19 @@ const CategoryCard = () => {
     };
     getAllCategory();
   }, []);
+
+ function handleItemClick(productId) {
+    navigate(`/InsideProduct/${productId}`)
+  };
   return (
     <ul className="list-unstyled category-itemTop">
       {getCategory.map((product) => (
         <li>
-          <div className="cards-top">
+          <div
+            key={product.id}
+            onClick={() => handleItemClick(product._id)}
+            className="cards-top"
+          >
             <div className="Cimg-top">
               <div className="banner-text">
                 <p className="text-edit">{product.categoryName}</p>

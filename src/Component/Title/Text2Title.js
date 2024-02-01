@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Text2Title = ({ text, className }) => {
   return (
-    <h1 className={`text-title ${className}`}>
+    <h1 className={`text-title2 ${className}`}>
       {text}
     </h1>
   );

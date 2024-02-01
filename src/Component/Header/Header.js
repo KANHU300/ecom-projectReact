@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 const Header = () => {
   const APi_URL ='http://192.168.0.60:4000/'
   const [clickCount, setClickCount] = useState(0);
@@ -54,9 +55,9 @@ const Header = () => {
             <span className="bar"></span>
             <span className="bar"></span>
           </div>
-          <a className="navbar-brand logo-edit  d-block d-lg-none" href="#">
+          <NavLink className="navbar-brand logo-edit  d-block d-lg-none" TO="/">
             LOGO
-          </a>
+          </NavLink>
           <ul className="navbar-nav  navIcons-top    d-flex  d-lg-none">
             <li className="nav-item">
               <a className="nav-link menubar-items" href="#">

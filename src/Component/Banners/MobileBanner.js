@@ -1,16 +1,16 @@
 import React from "react";
 
-const MobileBanner = () => {
+const MobileBanner = (props) => {
   return (
     // <div className="MobileBanners-top">
     <div className="MobileBanners-top">
       <div className="banner-text">
        
-        <p className="text-edit">Mobiles</p>
+        <p className="text-edit">{props.name}</p>
       </div>
       <div className="bannerImgg-top">
       <img
-        src="/images/LandingPg/MobileBanner.png"
+        src={props.image}
         alt="..."
         className="banner-insideImge"
       /></div>
