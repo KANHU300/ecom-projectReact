@@ -55,7 +55,7 @@ const Header = () => {
             <span className="bar"></span>
             <span className="bar"></span>
           </div>
-          <NavLink className="navbar-brand logo-edit  d-block d-lg-none" TO="/">
+          <NavLink className="navbar-brand logo-edit  d-block d-lg-none" to="/">
             LOGO
           </NavLink>
           <ul className="navbar-nav  navIcons-top    d-flex  d-lg-none">
@@ -89,9 +89,9 @@ const Header = () => {
           </ul>
 
           <div className=" navbar-collapse nav-menu navlist-top">
-            <a className="navbar-brand logo-edit  d-none d-lg-flex" href="#">
+            <NavLink className="navbar-brand logo-edit  d-none d-lg-flex" to="/">
               LOGO
-            </a>
+            </NavLink>
             <div className="navbar-nav mr-auto navUl-edit  ">
               <form className=" search-boxTop d-none d-lg-block" role="search">
                 <input

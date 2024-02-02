@@ -2,7 +2,6 @@
 
 import TextTitle from "../../Component/Title/TextTitle";
 import CategoryCard from "../../Component/categoryCard/CategoryCard";
-import CartItem from "../../Component/Cart/CartItem";
 // import { Button } from "bootstrap";
 import Slider from "../../Component/Slider/Slider";
 import Productslidr from "../../Component/Productslidr/Productslidr";
@@ -15,12 +14,13 @@ import MdBanerTop from "../../Component/Banners/MDBanerTop";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import ProductItems from "../../Component/ProductItems/ProductItems";
 
 const Landing = () => {
   const [getItems, setItems] = useState([]);
   const [bestProducts, setBestProducts] = useState([]);
 
-  const APi_URL = "http://192.168.29.47:4000/";
+  const APi_URL = "http://192.168.0.59:4000/";
   let navigation = useNavigate();
   useEffect(() => {
     const getMoreReason = async () => {
@@ -52,8 +52,6 @@ const Landing = () => {
     getAllCartProduct();
   }, []);
 
-  
-
   return (
     <div className="landingPage-data">
       <Productslidr />
@@ -71,14 +69,15 @@ const Landing = () => {
               <MegaDeals />
             </div>
           </div>
+          <div className="mb-2">
+            <Slider />
+          </div>
           <MdBanerTop />
         </div>
       </div>
       <div className="container">
-        <Slider />
-
         <TextTitle text="Best selling " className="textSub-title" />
-        <CartItem productObj={bestProducts} />
+        <ProductItems productObj={bestProducts} />
 
         <div>
           {getItems.map(
@@ -111,20 +110,34 @@ const Landing = () => {
                       </div>
                     </div>
                   </div>
-                  <TextTitle text="Best sellers " className="textSub-title" />
-                  <CartItem productObj={value.bestSellingProducts} />
+                  {value.bestSellingProducts.length > 0 && (
+                    <div>
+                      <TextTitle
+                        text="Best sellers "
+                        className="textSub-title"
+                      />
+                      <ProductItems productObj={value.bestSellingProducts} />
+                    </div>
+                  )}
+                  {value.getPriceDropProducts.length > 0 && (
+                    <div>
+                      <TextTitle
+                        text="Price Dropped Products "
+                        className="textSub-title"
+                      />
+                      <ProductItems productObj={value.getPriceDropProducts} />
+                    </div>
+                  )}
 
-                  <TextTitle
-                    text="Price Dropped Products "
-                    className="textSub-title"
-                  />
-                  <CartItem productObj={value.getPriceDropProducts} />
-
-                  <TextTitle
-                    text="Curated Products Products "
-                    className="textSub-title"
-                  />
-                  <CartItem productObj={value.CuratedProducts} />
+                  {value.CuratedProducts.length > 0 && (
+                    <div>
+                      <TextTitle
+                        text="Curated Products Products "
+                        className="textSub-title"
+                      />
+                      <ProductItems productObj={value.CuratedProducts} />
+                    </div>
+                  )}
                 </div>
               )
           )}
@@ -137,4 +150,3 @@ const Landing = () => {
 };
 
 export default Landing;
-

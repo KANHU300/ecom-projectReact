@@ -448,7 +448,7 @@ body {
 .landingPage-data {
   width: 100%;
   height: auto;
-
+  padding-bottom: 50px;
   .categoris-section {
     width: 100%;
     height: auto;
@@ -471,6 +471,7 @@ body {
     justify-content: center;
   }
   .cards-top {
+    cursor: pointer;
     .Cimg-top {
       height: 200px;
       width: 185px;
@@ -783,6 +784,8 @@ body {
   }
 }
 
+
+
 // ////////////////////////
 // carousel component
 ////////////////////////////
@@ -793,6 +796,8 @@ body {
   padding: 13px 16px 16px 16px;
   position: relative;
   border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   .slider-topTitle {
     font-family: Sf-M;
     font-size: 22px;
@@ -888,6 +893,7 @@ body {
 }
 .mega-deals-top{
   margin-top: 10px;
+  border-radius: 8px;
   background: #EBF9FF;
     padding: 0px 20px;
   .Mdeal-BnrTop {
@@ -1517,8 +1523,10 @@ body {
 // Insideproduct inner pagen css
 /////////////////////////
 .Product-page{
+  padding-bottom:50px;
   .inner-Banner-Top{
-    height: 270px;
+   
+    // height: 270px;
     width: auto;
     position: relative;
     @include xsm {
@@ -1529,7 +1537,7 @@ body {
     }
     .InnerBanner-images{
       width: 100%;
-      height: 100%;
+      height: 60vh;
     }
     .shop-btn{
       background-color: #02adc7;
@@ -1547,25 +1555,25 @@ body {
     }
   }
   .MegaDealsBnr{
-    .mega-deals-top{
-      margin-top: 10px;
-      background: #EBF9FF;
-        padding: 0px 20px;
-      .Mdeal-BnrTop {
-        .mdeal-image {
-          width: 100%;
-          height: auto;
-        }
-      }
-    
-    }
-    
-    .Mdeal-BnrBtm {
-      .mdeal-bottomImage {
+  .mega-deals-top{
+    margin-top: 10px;
+    background: #EBF9FF;
+      padding: 0px 20px;
+    .Mdeal-BnrTop {
+      .mdeal-image {
         width: 100%;
         height: auto;
       }
     }
   
   }
+  
+  .Mdeal-BnrBtm {
+    .mdeal-bottomImage {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+}
 }

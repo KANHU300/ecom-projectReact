@@ -436,6 +436,7 @@ body {
 .landingPage-data {
   width: 100%;
   height: auto;
+  padding-bottom: 50px;
 }
 .landingPage-data .categoris-section {
   width: 100%;
@@ -457,6 +458,9 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+.category-itemTop .cards-top {
+  cursor: pointer;
 }
 .category-itemTop .cards-top .Cimg-top {
   height: 200px;
@@ -770,6 +774,8 @@ body {
   padding: 13px 16px 16px 16px;
   position: relative;
   border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .bottom-Banner .slider-topTitle {
   font-family: Sf-M;
@@ -874,6 +880,7 @@ body {
 
 .mega-deals-top {
   margin-top: 10px;
+  border-radius: 8px;
   background: #EBF9FF;
   padding: 0px 20px;
 }
@@ -1620,8 +1627,10 @@ body {
   }
 }
 
+.Product-page {
+  padding-bottom: 50px;
+}
 .Product-page .inner-Banner-Top {
-  height: 270px;
   width: auto;
   position: relative;
 }
@@ -1637,7 +1646,7 @@ body {
 }
 .Product-page .inner-Banner-Top .InnerBanner-images {
   width: 100%;
-  height: 100%;
+  height: 60vh;
 }
 .Product-page .inner-Banner-Top .shop-btn {
   background-color: #02adc7;

@@ -10,7 +10,7 @@ import { Navigation } from "swiper/modules";
 
 const Productslidr = () => {
   const [getBanner, setBanner] = useState([]);
-  const APi_URL = "http://192.168.29.47:4000/";
+  const APi_URL = "http://192.168.0.59:4000/";
   useEffect(() => {
     const getAllCategory = async () => {
       try {

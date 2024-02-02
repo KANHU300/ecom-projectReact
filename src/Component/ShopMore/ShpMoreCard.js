@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 
 const ShpMoreCard = () => {
   const [getItems, setItems] = useState([]);
-  const APi_URL = "http://192.168.29.47:4000/";
+  const APi_URL = "http://192.168.0.59:4000/";
   useEffect (()=>{
     const getMoreReason = async () => {
       try {
@@ -25,7 +25,7 @@ const ShpMoreCard = () => {
   }, [])
   return (
     <div className="ShopMore-cards">
-      <Text2Title text=" Best selling mobiles" />
+      <Text2Title text="More reasons to shop" />
       <div className="row g-3">
         {getItems.map((item)=>( <div className="col-lg-6 ">
           <div className="shopMore-top">

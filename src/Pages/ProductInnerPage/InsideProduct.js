@@ -1,11 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CartItem from "../../Component/Cart/CartItem";
 import TextTitle from "../../Component/Title/TextTitle";
-
-import MdBanerTop from "../../Component/Banners/MDBanerTop";
 import MegaDealsBnr from "../../Component/Banners/MegaDealsBnr";
+import ProductItems from "../../Component/ProductItems/ProductItems";
 
 const InsideProduct = () => {
   const { id } = useParams();
@@ -16,15 +14,15 @@ const InsideProduct = () => {
   const [getBannerImage, setBannerImage] = useState([]);
   const [getCurated, setCurated] = useState([]);
 
-  const APi_URL = "http://192.168.29.47:4000/";
+  const APi_URL = "http://192.168.0.59:4000/";
   useEffect(() => {
-    debugger
+    
     const getDiscountedProduct = async () => {
       try {
         const response = await axios.get(
           `${APi_URL}admin/products/getAllMegaDeals`
         );
-        debugger
+       
         console.log("getAllMegaDeals", response.data);
         setProducts(response.data);
       } catch (error) {
@@ -50,13 +48,9 @@ const InsideProduct = () => {
     };
     getMoreReason();
   }, []);
-
- 
-  
-
   return (
     <div className="Product-page">
-      <div className="inner-Banner-Top">
+      <div style={{marginBottom:'100'}} className="inner-Banner-Top">
         <img
           className="InnerBanner-images"
           src={getBannerImage}
@@ -68,21 +62,22 @@ const InsideProduct = () => {
      {bestProducts.length > 0 && (
         <div>
           <TextTitle text="Best sellers " className="textSub-title" />
-          <CartItem productObj={bestProducts} />
+          <ProductItems
+           productObj={bestProducts} />
         </div>
       )}
 
       {getPriceDropd.length > 0 && (
         <div>
           <TextTitle text="Price Dropped " className="textSub-title" />
-          <CartItem productObj={getPriceDropd} />
+          <ProductItems productObj={getPriceDropd} />
         </div>
       )}
 
       {getCurated.length > 0 && (
         <div>
           <TextTitle text="Currated Products" className="textSub-title" />
-          <CartItem productObj={getCurated} />
+          <ProductItems productObj={getCurated} />
         </div>
       )}
 

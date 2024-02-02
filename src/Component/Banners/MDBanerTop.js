@@ -5,7 +5,7 @@ import TextTitle from "../Title/TextTitle";
 
 const MdBanerTop = () => {
   const [getItems, setItems] = useState([]);
-  const APi_URL = "http://192.168.29.47:4000/";
+  const APi_URL = "http://192.168.0.59:4000/";
   useEffect(() => {
     const getDiscountedProduct = async () => {
       try {
